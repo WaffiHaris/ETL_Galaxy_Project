@@ -1,9 +1,9 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-engine_oltp = create_engine("postgresql://postgres:1234@localhost:5432/adventureworks")
-engine_stg = create_engine("postgresql://postgres:1234@localhost:5432/aw_staging_master")
-engine_dw = create_engine("postgresql://postgres:1234@localhost:5432/aw_dw_galaxy")
+engine_oltp = create_engine("postgresql://postgres:123@localhost:5432/adventureworks")
+engine_stg = create_engine("postgresql://postgres:123@localhost:5432/aw_staging_master")
+engine_dw = create_engine("postgresql://postgres:123@localhost:5432/aw_dw_galaxy")
 
 def extract_purchasing():
     print("PURCHASING: Extracting data to Staging...")

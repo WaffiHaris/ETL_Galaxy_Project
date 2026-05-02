@@ -7,9 +7,9 @@ from sqlalchemy import create_engine
 # Ganti dengan kredensial PostgreSQL kalian yang sudah disepakati
 # Format: postgresql://username:password@host:port/database_name
 
-engine_oltp = create_engine("postgresql://postgres:1234@localhost:5432/adventureworks")
-engine_stg = create_engine("postgresql://postgres:1234@localhost:5432/aw_staging_master")
-engine_dw = create_engine("postgresql://postgres:1234@localhost:5432/aw_dw_galaxy")
+engine_oltp = create_engine("postgresql://postgres:123@localhost:5432/adventureworks")
+engine_stg = create_engine("postgresql://postgres:123@localhost:5432/aw_staging_master")
+engine_dw = create_engine("postgresql://postgres:123@localhost:5432/aw_dw_galaxy")
 
 # ==========================================
 # 2. ETL DIMENSI PRODUCT
