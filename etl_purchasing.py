@@ -10,6 +10,10 @@ def extract_purchasing():
     # Vendor
     df_vendor = pd.read_sql("SELECT businessentityid, name as vendorname, accountnumber, creditrating, activeflag FROM purchasing.vendor", engine_oltp)
     df_vendor.columns = [c.lower() for c in df_vendor.columns]
+    
+    # --- TRANSFORMASI BARU: Ubah Boolean ke Integer ---
+    df_vendor['activeflag'] = df_vendor['activeflag'].astype(int) 
+    
     df_vendor.to_sql('stg_vendor', engine_stg, if_exists='replace', index=False)
 
     # Ship Method

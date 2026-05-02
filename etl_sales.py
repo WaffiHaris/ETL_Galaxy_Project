@@ -7,7 +7,7 @@ engine_dw = create_engine("postgresql://postgres:123@localhost:5432/aw_dw_galaxy
 
 def extract_sales():
     print("SALES: Extracting data to Staging...")
-    # Customer (Gabungan sederhana untuk contoh, sesuaikan dengan query sales sebenarnya jika lebih kompleks)
+    # Customer
     df_cust = pd.read_sql("""
         SELECT c.customerid, p.firstname || ' ' || COALESCE(p.lastname, '') as fullname,
                ea.emailaddress, NULL as gender, NULL as birthdate, NULL as city, NULL as stateprovince, NULL as country
@@ -18,8 +18,12 @@ def extract_sales():
     df_cust.columns = [c.lower() for c in df_cust.columns]
     df_cust.to_sql('stg_customer', engine_stg, if_exists='replace', index=False)
 
-    # Territory
-    df_terr = pd.read_sql("SELECT territoryid, name as territoryname, countryregioncode as country, \"group\" FROM sales.salesterritory", engine_oltp)
+    # Territory (Perbaikan: mengubah "group" menjadi territorygroup)
+    df_terr = pd.read_sql("""
+        SELECT territoryid, name as territoryname, countryregioncode as country, 
+               "group" AS territorygroup 
+        FROM sales.salesterritory
+    """, engine_oltp)
     df_terr.columns = [c.lower() for c in df_terr.columns]
     df_terr.to_sql('stg_territory', engine_stg, if_exists='replace', index=False)
 
