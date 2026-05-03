@@ -110,6 +110,9 @@ Ary Ratna Aida Safa - 5026241029
 Alwida Rahmat - 5026241090
 
 
+Record Youtube (Simulasi)
+https://www.youtube.com/watch?v=clWI3fi0F0c
+
 Mata Kuliah Data Lakehouse - Kelas B
 
 Departemen Sistem Informasi - Institut Teknologi Sepuluh Nopember (ITS)
