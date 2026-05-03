@@ -69,21 +69,22 @@ Setelah eksekusi selesai, Anda dapat menjalankan query analitik lintas departeme
 
 SQL -- Perbandingan unit terjual vs unit dibeli per Produk
 
-SELECT 
-
-    p.productname,
+    SELECT 
     
-    SUM(fs.orderqty) as total_sold,
+        p.productname,
+        
+        SUM(fs.orderqty) as total_sold,
+        
+        SUM(fp.orderqty) as total_purchased
     
-    SUM(fp.orderqty) as total_purchased
+    FROM dim_product p
+    
+    LEFT JOIN fact_sales_online fs ON p.productkey = fs.productkey
+    
+    LEFT JOIN fact_purchasing fp ON p.productkey = fp.productkey
+    
+    GROUP BY p.productname;
 
-FROM dim_product p
-
-LEFT JOIN fact_sales_online fs ON p.productkey = fs.productkey
-
-LEFT JOIN fact_purchasing fp ON p.productkey = fp.productkey
-
-GROUP BY p.productname;
 
 **🛠️ Teknologi yang Digunakan**
 
@@ -95,7 +96,8 @@ SQLAlchemy: Sebagai engine ORM untuk koneksi database.
 
 PostgreSQL: Sebagai media penyimpanan OLTP, Staging, dan Data Warehouse.
 
-**Kontributor: **
+
+**Kontributor:**
 
 Kelompok 14
 
@@ -106,4 +108,5 @@ Ary Ratna Aida Safa - 5026241029
 Alwida Rahmat - 5026241090
 
 
+Kelas B - Data Lakehouse
 Departemen Sistem Informasi - Institut Teknologi Sepuluh Nopember (ITS)
