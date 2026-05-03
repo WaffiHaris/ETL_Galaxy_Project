@@ -33,6 +33,7 @@ Ketiga departemen ini dihubungkan melalui Conformed Dimensions (Dimensi Bersama)
 Pastikan Anda memiliki PostgreSQL dan library Python berikut:
 
 Bash
+
     pip install pandas sqlalchemy psycopg2-binary
 
 **2. Inisialisasi Database**
@@ -97,8 +98,8 @@ SQLAlchemy: Sebagai engine ORM untuk koneksi database.
 PostgreSQL: Sebagai media penyimpanan OLTP, Staging, dan Data Warehouse.
 
 
-
 **Kontributor:**
+
 
 Kelompok 14
 
@@ -109,5 +110,6 @@ Ary Ratna Aida Safa - 5026241029
 Alwida Rahmat - 5026241090
 
 
-Kelas B - Data Lakehouse
+Mata Kuliah Data Lakehouse - Kelas B
+
 Departemen Sistem Informasi - Institut Teknologi Sepuluh Nopember (ITS)
