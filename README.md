@@ -33,15 +33,15 @@ Ketiga departemen ini dihubungkan melalui Conformed Dimensions (Dimensi Bersama)
 Pastikan Anda memiliki PostgreSQL dan library Python berikut:
 
 Bash
-pip install pandas sqlalchemy psycopg2-binary
+    pip install pandas sqlalchemy psycopg2-binary
 
 **2. Inisialisasi Database**
 
 Jalankan script SQL yang ada di file schema.sql pada PostgreSQL Anda untuk membuat database:
 
-aw_staging_master
-
-aw_dw_galaxy
+    aw_staging_master
+    
+    aw_dw_galaxy
 
 **3. Eksekusi ETL**
 
@@ -51,7 +51,7 @@ Jalankan proses secara modular sesuai urutan fase:
 
 Bash
 
-python fase_1_extract.py
+    python fase_1_extract.py
 
 Script ini akan menarik data dari OLTP dan membuat tabel stg_... secara otomatis di database staging.
 
@@ -59,7 +59,7 @@ Script ini akan menarik data dari OLTP dan membuat tabel stg_... secara otomatis
 
 Bash
 
-python fase_2_load_dw.py
+    python fase_2_load_dw.py
 
 Script ini akan memproses data staging, melakukan lookup surrogate keys, dan mengisi tabel dimensi serta fakta di database data warehouse.
 
@@ -95,6 +95,7 @@ Pandas: Untuk manipulasi dan transformasi data.
 SQLAlchemy: Sebagai engine ORM untuk koneksi database.
 
 PostgreSQL: Sebagai media penyimpanan OLTP, Staging, dan Data Warehouse.
+
 
 
 **Kontributor:**
