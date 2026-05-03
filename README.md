@@ -65,7 +65,12 @@ GROUP BY p.productname;
 Python 3.x
 Pandas: Untuk manipulasi dan transformasi data.
 SQLAlchemy: Sebagai engine ORM untuk koneksi database.
-
 PostgreSQL: Sebagai media penyimpanan OLTP, Staging, dan Data Warehouse.
 
-Kontributor: [Nama Anda / Tim Anda] - Institut Teknologi Sepuluh Nopember (ITS)
+**Kontributor: **
+Kelompok 14
+Waffi Haris Ashari - 5026241020
+Ary Ratna Aida Safa - 5026241029
+Alwida Rahmat - 5026241090
+
+Departemen Sistem Informasi - Institut Teknologi Sepuluh Nopember (ITS)
